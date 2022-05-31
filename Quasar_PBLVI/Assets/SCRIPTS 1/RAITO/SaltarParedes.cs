@@ -134,7 +134,7 @@ public class SaltarParedes : MonoBehaviour
                 }
                 else
                 {
-                    EMPCAM = false;
+                   EMPCAM = false;
                     ESTCAM = false ;
                 }
 
@@ -145,20 +145,20 @@ public class SaltarParedes : MonoBehaviour
             }
             else
             {
-                this.gameObject.transform.position = this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Horizontal * speed);
+                this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Horizontal * speed);
                 Debug.Log("ad");
 
                 
                 if ((_inputHandler.Horizontal * speed)>0)
                 {
                     EMPCAM = true;
-                    ESTCAM = false;
+                   ESTCAM = false;
                     Debug.Log(transform.forward);
                 }
                 else if ((_inputHandler.Horizontal * speed) < 0)
                 {
-                    EMPCAM = false;
-                    ESTCAM = true;
+                   EMPCAM = false;
+                   ESTCAM = true;
                     Debug.Log(transform.forward);
                 }
                 else
