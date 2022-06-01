@@ -89,7 +89,7 @@ public class Empujar_atraer : MonoBehaviour
 
                 other.GetComponent<Rigidbody>().isKinematic = true;
 
-                other.transform.position = _handpoint.transform.position;
+               // other.transform.position = _handpoint.transform.position;
 
                 other.gameObject.transform.SetParent(_handpoint.gameObject.transform);
 
@@ -112,6 +112,19 @@ public class Empujar_atraer : MonoBehaviour
     }
 
 
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("arrastrar"))
+        {
+
+            _inputHandler._puedocoger = false;
+        }
+
+
+
+    }
 
 
 

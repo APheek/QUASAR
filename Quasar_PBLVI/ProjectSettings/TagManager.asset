@@ -7,11 +7,33 @@ TagManager:
   - HandCoger
   - HandArrastrar
   - trigger
+  - alfombra3
+  - botonsalida4
+  - arrastrar
+  - Objeto
+  - hikari
+  - alfombra
+  - Puntoguar3
+  - botonentrada1
+  - Puntoguar4
+  - Puntoguar2
+  - alfombra1
+  - botonentrada2
+  - botonsalida2
+  - botonentrada3
+  - alfombra2
+  - TriggerNiv4
+  - botonsalida1
+  - botonsalida3
+  - botonentrada4
+  - Puntoguar1
+  - TapaCajaEle
+  - Roto
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wall
   - Water
   - UI
   - Atractor

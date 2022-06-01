@@ -51,14 +51,15 @@ public class CogerObjeto : MonoBehaviour
 
 
    private void OnTriggerStay(Collider other){
-        _inputHandler._puedocoger = true;
+        
        
         if (other.gameObject.CompareTag("Objeto")){
-       //Debug.Log("coger");    
-     //  Debug.Log(_inputHandler._coger);
-       //Debug.Log("objeto");
-           //Debug.Log(pickedObject==null);
-           if ((_inputHandler._coger) && (pickedObject==null)){
+            _inputHandler._puedocoger = true;
+            //Debug.Log("coger");    
+            //  Debug.Log(_inputHandler._coger);
+            //Debug.Log("objeto");
+            //Debug.Log(pickedObject==null);
+            if ((_inputHandler._coger) && (pickedObject==null)){
                 
                 COGER = true;
               // Debug.Log("cogido");
@@ -213,9 +214,20 @@ public class CogerObjeto : MonoBehaviour
         }
 
         }
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Objeto"))
+        {
+
+            _inputHandler._puedocoger = false;
+        }
+
 
 
     }
+
+}
 
 
 

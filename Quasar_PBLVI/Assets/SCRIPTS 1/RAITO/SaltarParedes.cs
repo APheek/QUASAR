@@ -41,7 +41,7 @@ public class SaltarParedes : MonoBehaviour
     private Vector3 lastMove;
     private bool _groundedPlayer;
     public float speed;
-    private float jumpforce = 8f;
+    private float jumpforce = 5f;
     public float gravity = 25;
     private float verticalVelocity;
     private CharacterController controller;
@@ -226,7 +226,7 @@ public class SaltarParedes : MonoBehaviour
                 
                 if (isonwall)
                 {
-                    verticalVelocity -= gravity * Time.deltaTime * 0.5f;
+                    verticalVelocity -= gravity * Time.deltaTime * 0.81f;
 
 
                     DESLIZARSE = true;
@@ -262,14 +262,14 @@ public class SaltarParedes : MonoBehaviour
             {
 
                 TRANSCORRCAM = true;
-                if (speed == 0.5)
+                if (speed == 1)
                 {
                     CAMINANDO = true;
                     CORRER = false;
 
                     if (_audiocaminar.isPlaying == false)
                     {
-                        if (speed == 0.5f)
+                        if (speed == 1)
                         {
 
                             _audiocaminar.Play();
@@ -384,10 +384,20 @@ public class SaltarParedes : MonoBehaviour
 
         if (_inputHandler._run || _inputHandler._agacharse || _sccripttriggerniv1._banderatriggerNiv1 || WALLJUMP)
         {
-           if (_inputHandler._run || WALLJUMP)
+            if (_inputHandler._run)
             {
                 speed = 3.5f;
             }
+
+            else if (WALLJUMP)
+
+            {
+                jumpforce = 7f;
+                speed = 5f;
+            }
+
+
+
 
             else if (_inputHandler._agacharse)
             {
@@ -447,9 +457,9 @@ public class SaltarParedes : MonoBehaviour
 
         else
         {
-            controller.height = 2.0f;
+            controller.height = 1.53f;
             // controller.height = Mathf.Lerp(alturaoriginal, 1, 10f);
-            controller.center = new Vector3(0, 0, 0);
+            controller.center = new Vector3(0, -0.25f, 0);
             // AGACHARSE = false;
            
             AGACHARSE = false;
@@ -463,7 +473,7 @@ public class SaltarParedes : MonoBehaviour
             //}
            // else
            // {
-                speed = 0.5f;
+                speed = 1f;
 
            // }
 
