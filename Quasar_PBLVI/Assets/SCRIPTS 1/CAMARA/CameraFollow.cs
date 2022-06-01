@@ -29,8 +29,8 @@ public class CameraFollow : MonoBehaviour
  Vector3 position = (transform.position);
  position.y = targetH.position.y;
   position.x = targetH.position.x;
-
- Vector3 smoothedPosition = Vector3.Lerp (transform.position, position, smoothSpeed *Time.deltaTime);
+  position.z = targetH.position.z;
+            Vector3 smoothedPosition = Vector3.Lerp (transform.position, position, smoothSpeed *Time.deltaTime);
  transform.position = position;
 
  transform.LookAt(targetH);
@@ -47,8 +47,8 @@ public class CameraFollow : MonoBehaviour
         Vector3 position = (transform.position);
         position.y = (target.position + offset).y;
         position.x = (target.position + offset).x;
-
-        Vector3 smoothedPosition = Vector3.Lerp (transform.position, position, smoothSpeed *Time.deltaTime);
+        position.z = (target.position + offset).z;
+            Vector3 smoothedPosition = Vector3.Lerp (transform.position, position, smoothSpeed *Time.deltaTime);
         transform.position = smoothedPosition;
 
         transform.LookAt(target);
