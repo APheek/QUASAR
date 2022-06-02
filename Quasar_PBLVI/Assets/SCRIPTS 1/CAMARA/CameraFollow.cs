@@ -13,8 +13,8 @@ public class CameraFollow : MonoBehaviour
  void Start(){
 
  z= transform.position.z;
-  _inputHandler = GetComponent<Controller>();
- }
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
+    }
 
  void Update(){
  // z= -10;

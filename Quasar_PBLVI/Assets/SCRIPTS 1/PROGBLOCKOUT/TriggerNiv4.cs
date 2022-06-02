@@ -17,7 +17,7 @@ public bool CHISPA;
     void Start()
     {
         //Destroy(puerta,3) ;
-        _inputHandler = GetComponent<Controller>();
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
         _bandera = false;
        // PRUEBA = false;
     }

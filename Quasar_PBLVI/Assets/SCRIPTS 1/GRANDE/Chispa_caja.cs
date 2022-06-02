@@ -18,7 +18,7 @@ public class Chispa_caja : MonoBehaviour
     {
         _tapa = GameObject.FindGameObjectWithTag("TapaCajaEle").GetComponent<Abrir_caja>();
         _roto = GameObject.FindGameObjectWithTag("Roto").GetComponent<RotoHik>();
-        _inputHandler = GetComponent<Controller>();
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
 
         _hingeJoint.useMotor = true;
         _hingeJoint2.useMotor = true;

@@ -194,9 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9066350062350119646}
-  - component: {fileID: 9066350062350119643}
   - component: {fileID: 9066350062350119642}
-  - component: {fileID: 9066350062350119645}
   - component: {fileID: 9066350062350119644}
   - component: {fileID: 9066350062350119647}
   - component: {fileID: 9066350062350119640}
@@ -228,36 +226,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90.103, z: 0}
---- !u!114 &9066350062350119643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066350062350119633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 90c0a7dfe908cff49891e795f0447934, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Raito
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!143 &9066350062350119642
 CharacterController:
   m_ObjectHideFlags: 0
@@ -276,31 +244,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.25, z: 0}
---- !u!114 &9066350062350119645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066350062350119633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1fc2be1775ecc4a894eaa82e295509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puedegirar: 0
-  _run: 0
-  _jump: 0
-  _coger: 0
-  _balancearse: 0
-  _cambio: 0
-  _boton: 0
-  _puedopulsarlo: 0
-  _puedocoger: 0
-  _agacharse: 0
-  _chispa: 0
-  _pared: 0
-  CHISPAZO: 0
 --- !u!114 &9066350062350119644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,8 +462,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9066350062414628926}
   - component: {fileID: 9066350062414628923}
-  - component: {fileID: 9066350062414628922}
-  - component: {fileID: 9066350062414628925}
   - component: {fileID: 9066350062414628924}
   - component: {fileID: 9066350062414628927}
   m_Layer: 0
@@ -564,61 +505,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9066350062414628922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066350062414628913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 90c0a7dfe908cff49891e795f0447934, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Raito
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &9066350062414628925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066350062414628913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1fc2be1775ecc4a894eaa82e295509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puedegirar: 0
-  _run: 0
-  _jump: 0
-  _coger: 0
-  _balancearse: 0
-  _cambio: 0
-  _boton: 0
-  _puedopulsarlo: 0
-  _puedocoger: 0
-  _agacharse: 0
-  _chispa: 0
-  _pared: 0
-  CHISPAZO: 0
 --- !u!114 &9066350062414628924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,8 +546,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9066350062937411089}
   - component: {fileID: 9066350062937411098}
-  - component: {fileID: 9066350062937411101}
-  - component: {fileID: 9066350062937411100}
   - component: {fileID: 9066350062937411102}
   - component: {fileID: 9066350062937411103}
   m_Layer: 0
@@ -702,61 +586,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &9066350062937411101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066350062937411088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 90c0a7dfe908cff49891e795f0447934, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Raito
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &9066350062937411100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9066350062937411088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1fc2be1775ecc4a894eaa82e295509, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puedegirar: 0
-  _run: 0
-  _jump: 0
-  _coger: 0
-  _balancearse: 0
-  _cambio: 0
-  _boton: 0
-  _puedopulsarlo: 0
-  _puedocoger: 0
-  _agacharse: 0
-  _chispa: 0
-  _pared: 0
-  CHISPAZO: 0
 --- !u!65 &9066350062937411102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -984,14 +813,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e8af43c44b9397428db8931859b96e5, type: 3}
---- !u!1 &8147940302764265190 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e8af43c44b9397428db8931859b96e5, type: 3}
-  m_PrefabInstance: {fileID: 9066350062981313463}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8815967956525257820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4e8af43c44b9397428db8931859b96e5, type: 3}
+  m_PrefabInstance: {fileID: 9066350062981313463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8147940302764265190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4e8af43c44b9397428db8931859b96e5, type: 3}
   m_PrefabInstance: {fileID: 9066350062981313463}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &9066350063564783256

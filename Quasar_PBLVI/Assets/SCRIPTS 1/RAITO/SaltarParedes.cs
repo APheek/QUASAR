@@ -46,6 +46,7 @@ public class SaltarParedes : MonoBehaviour
     private float verticalVelocity;
     private CharacterController controller;
     public LayerMask wallmask;
+    public LayerMask groundmask;
     public bool isonwall;
 
     private int contadorparedes;
@@ -89,7 +90,7 @@ public class SaltarParedes : MonoBehaviour
         _scriptempujar = GameObject.FindGameObjectWithTag("HandArrastrar").GetComponent<Empujar_atraer>();
         _sccripttriggerniv1 = GameObject.FindGameObjectWithTag("trigger").GetComponent<triggerNiv1>();
         controller = GetComponent<CharacterController>();
-        _inputHandler = GetComponent<Controller>();
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
         isonwall = false;
         _agachandose = false;
         Vector3 scale = (transform.localScale);
@@ -113,61 +114,77 @@ public class SaltarParedes : MonoBehaviour
             
             Debug.Log("arrastrandoobjetoon");
             Vector3 forward = transform.forward;
-
-
-            if (Mathf.Abs(Vector3.Dot(forward, Vector3.forward)) > 0.75f)
+            if (Physics.CheckSphere(transform.position + transform.up * -0.5f, 0.2f, groundmask))
             {
-                this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Vertical * speed);
-                Debug.Log("ws");
 
-                if ((_inputHandler.Vertical * speed)> 0)
+                if (Mathf.Abs(Vector3.Dot(forward, Vector3.forward)) > 0.75f)
                 {
-                    EMPCAM = true;
-                    ESTCAM = false;
-                    Debug.Log(transform.forward);
-                }
-                else if ((_inputHandler.Vertical * speed) < 0)
-                {
-                    EMPCAM = false;
-                    ESTCAM = true;
-                    Debug.Log(transform.forward);
+                    this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Vertical * speed);
+                    Debug.Log("ws");
+
+                    if ((_inputHandler.Vertical * speed) > 0)
+                    {
+                        EMPCAM = true;
+                        ESTCAM = false;
+                        Debug.Log(transform.forward);
+                    }
+                    else if ((_inputHandler.Vertical * speed) < 0)
+                    {
+                        EMPCAM = false;
+                        ESTCAM = true;
+                        Debug.Log(transform.forward);
+                    }
+                    else
+                    {
+                        EMPCAM = false;
+                        ESTCAM = false;
+                    }
+
+
+
+
+
                 }
                 else
                 {
-                   EMPCAM = false;
-                    ESTCAM = false ;
+                    this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Horizontal * speed);
+                    Debug.Log("ad");
+
+
+                    if ((_inputHandler.Horizontal * speed) > 0)
+                    {
+                        EMPCAM = true;
+                        ESTCAM = false;
+                        Debug.Log(transform.forward);
+                    }
+                    else if ((_inputHandler.Horizontal * speed) < 0)
+                    {
+                        EMPCAM = false;
+                        ESTCAM = true;
+                        Debug.Log(transform.forward);
+                    }
+                    else
+                    {
+                        EMPCAM = false;
+                        ESTCAM = false;
+                    }
                 }
-
-
-
-
-
             }
+
+
             else
             {
-                this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Horizontal * speed);
-                Debug.Log("ad");
 
+                moveVector = Vector3.zero;
+                verticalVelocity -= gravity * Time.deltaTime;
+                moveVector.y = verticalVelocity;
+                controller.Move(moveVector * Time.deltaTime);
                 
-                if ((_inputHandler.Horizontal * speed)>0)
-                {
-                    EMPCAM = true;
-                   ESTCAM = false;
-                    Debug.Log(transform.forward);
-                }
-                else if ((_inputHandler.Horizontal * speed) < 0)
-                {
-                   EMPCAM = false;
-                   ESTCAM = true;
-                    Debug.Log(transform.forward);
-                }
-                else
-                {
-                    EMPCAM = false;
-                    ESTCAM = false;
-                }
+                _inputHandler._coger = !_inputHandler._coger;
+                EMPCAM = false;
+                ESTCAM = false;
+                _scriptempujar.EMPUJAR = false;
             }
-            
 
         }
 

@@ -34,8 +34,8 @@ public Vector3 caca;
     {
         _saltarparedes = GameObject.FindGameObjectWithTag("Player").GetComponent<SaltarParedes>();
         _saltarparedes.enabled = true;
-         _inputHandler = GetComponent<Controller>();
-         _bandera= false;
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
+        _bandera = false;
          _botonpulsado = false;
          _celebracion = false;
 

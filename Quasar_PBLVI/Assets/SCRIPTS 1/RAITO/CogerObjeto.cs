@@ -29,7 +29,7 @@ public class CogerObjeto : MonoBehaviour
     void Start()
     {
         //_characterController = GetComponent<CharacterController>();
-        _inputHandler = GetComponent<Controller>();
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
         bandera = false;
 
 

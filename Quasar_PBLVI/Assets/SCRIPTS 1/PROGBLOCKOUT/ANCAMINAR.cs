@@ -86,7 +86,7 @@ public class ANCAMINAR : MonoBehaviour
     {
         _empujaratraer = GameObject.FindGameObjectWithTag("HandArrastrar").GetComponent<Empujar_atraer>();
         _cogerobjeto = GameObject.FindGameObjectWithTag("HandCoger").GetComponent<CogerObjeto>();
-        _controller = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
+        _controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
         _movement = GameObject.FindGameObjectWithTag("Player").GetComponent<SaltarParedes>();
         _arrastrar = GameObject.FindGameObjectWithTag("Player").GetComponent<Arrastrar>();
          _scriptchispazo = GameObject.FindGameObjectWithTag("TriggerNiv4").GetComponent<TriggerNiv4>();

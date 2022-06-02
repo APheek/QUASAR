@@ -19,9 +19,9 @@ public class CAMBIARHIK : MonoBehaviour
     _saltarparedes = GetComponent<SaltarParedes>();
         //_characterController = GetComponent<CharacterController>();
          _characterController = GetComponent<CharacterController>();
-        
-        _inputHandler = GetComponent<Controller>();
-       _volarhik.enabled = false;
+
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
+        _volarhik.enabled = false;
           _saltarparedes.enabled = true;
     }
 

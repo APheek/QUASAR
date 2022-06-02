@@ -23,7 +23,7 @@ public class Empujar_atraer : MonoBehaviour
         saltarparedes = GameObject.FindGameObjectWithTag("Player").GetComponent<SaltarParedes>();
         EMPUJAR = false;
         //_characterController = GetComponent<CharacterController>();
-        _inputHandler = GetComponent<Controller>();
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
         Arrastrando_objeto = false;
 
         //  _posicionharta =   pickedObject.GetComponent<Rigidbody>();
