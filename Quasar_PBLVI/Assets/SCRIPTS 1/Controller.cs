@@ -12,6 +12,11 @@ public class Controller : MonoBehaviour
 
     SaltarParedes saltarparedes;
 
+
+    public bool movimientoascensor;
+
+
+
     public bool puedegirar;
 
      private CharacterController _characterController;
@@ -62,7 +67,7 @@ public bool _pared;
     // Start is called before the first frame update
     void Start()
     {
-
+        movimientoascensor = false;
         saltarparedes = GameObject.FindGameObjectWithTag("Player").GetComponent<SaltarParedes>();
 
         _characterController = GetComponent <CharacterController>();

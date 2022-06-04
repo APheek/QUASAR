@@ -6,10 +6,12 @@ public class RotoHik : MonoBehaviour
 {
 
     public bool _bandera;
+    
     // Start is called before the first frame update
     void Start()
     {
         _bandera = false;
+        
     }
 
     // Update is called once per frame
@@ -27,8 +29,11 @@ public class RotoHik : MonoBehaviour
         //var opendoor = other.GetComponent<opendoor>();
         if (other.gameObject.tag == "hikari") //Esto nos hace saber si el other que ha entrado tiene o no un jumper añadido.
         {
-            Debug.Log("Hikari is on the air");
-            _bandera = true;
+            
+                Debug.Log("Hikari is on the air");
+                _bandera = true;
+            
+           
             
         }
 
@@ -46,7 +51,7 @@ public class RotoHik : MonoBehaviour
         {
           
             _bandera = false;
-
+            
         }
 
 

@@ -30,6 +30,7 @@ TagManager:
   - TapaCajaEle
   - Roto
   - Romper_cristal
+  - Roto2
   layers:
   - Default
   - TransparentFX
