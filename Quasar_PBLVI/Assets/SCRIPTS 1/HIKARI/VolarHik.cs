@@ -14,25 +14,29 @@ public class VolarHik : MonoBehaviour
     private Vector2 _input;
     //public Transform FlightArea;
     public Vector3 dir;
+    public Vector3 current;
     public Vector2 _flyValue;
     public float yRange = 0.8f;
 
     public float _distance;
     public Vector3 offset;
     public float smoothSpeed = 10f;
-
+    HikariFollow follow;
 
     public bool debevolver;
 
     // Start is called before the first frame update
     void Start()
     {
-        _charactercontroller=GetComponent<CharacterController>();
+        _charactercontroller = GetComponent<CharacterController>();
+        follow = GetComponent<HikariFollow>();
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        current = follow.current;
         Move();
         volver();
     }
@@ -44,23 +48,23 @@ public class VolarHik : MonoBehaviour
          {
              transform.position = new Vector3(transform.position.x, yRange, transform.position.z);
          }*/
-        
-       
+
+
 
 
     }
 
     private void OnMoverHik(InputValue inputValue)
     {
-       // Debug.Log("hikari se mueve");
-            _input = inputValue.Get<Vector2>();
-       // print(_input);
+        // Debug.Log("hikari se mueve");
+        _input = inputValue.Get<Vector2>();
+        // print(_input);
     }
 
     private void OnVolarr(InputValue inputValue)
     {
         _flyValue = inputValue.Get<Vector2>();
-    
+
     }
 
 
@@ -69,12 +73,12 @@ public class VolarHik : MonoBehaviour
     {
 
         Debug.Log("MOOVVEEEEEEEEEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRRRRRR");
-        float x= _input.x * Speed;
-        float z= _input.y * Speed;
-        float y= _flyValue.y * Speed; 
-       // Vector3 dir = Vector3.zero;
+        float x = _input.x * Speed;
+        float z = _input.y * Speed;
+        float y = _flyValue.y * Speed;
+        // Vector3 dir = Vector3.zero;
         //dir.x = cc.velocity.x*_input.x;
-        
+
 
         /*if (_flyValue==0)
         {
@@ -85,13 +89,13 @@ public class VolarHik : MonoBehaviour
            y= _flyValue;
 
         }*/
-        Vector3 dir = new Vector3 (x, y, z) * Time.deltaTime;
+        Vector3 dir = new Vector3(x, y, z) * Time.deltaTime;
         _charactercontroller.Move(dir);
         //dir.z = -cc.velocity.z*_input.y;//el menos es pk esta invertido sino va al reves
         //dir *= Speed * Time.deltaTime;
         //transform.Translate(dir, Space.Self);
 
-        
+
 
     }
 
@@ -101,7 +105,7 @@ public class VolarHik : MonoBehaviour
     {
         _distance = Vector3.Distance(target.transform.localPosition, transform.localPosition);
 
-        
+
         if (_distance > 18 || debevolver)
         {
             Debug.Log(_distance);
@@ -129,7 +133,7 @@ public class VolarHik : MonoBehaviour
             }
         }
         debevolver = false;
-        
+
 
     }
 

@@ -46,7 +46,7 @@ public class CAMBIARHIK : MonoBehaviour
           // player_input.SwitchCurrentActionMap("Raito");
            _volarhik.enabled = false;
            _saltarparedes.enabled = true;
-         //  _scriptseguirhikari.enabled = true;
+          _scriptseguirhikari.enabled = true;
 
         }
     }

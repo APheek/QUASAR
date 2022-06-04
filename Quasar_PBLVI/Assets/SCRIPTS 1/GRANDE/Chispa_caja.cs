@@ -11,7 +11,7 @@ public class Chispa_caja : MonoBehaviour
     public HingeJoint _hingeJoint;
     public HingeJoint _hingeJoint2;
     public JointMotor caneHingeMotor;
-
+    public GameObject topedeventilador;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,8 @@ public class Chispa_caja : MonoBehaviour
 
         _hingeJoint.useMotor = true;
         _hingeJoint2.useMotor = true;
+
+       
     }
 
     // Update is called once per frame
@@ -42,18 +44,23 @@ public class Chispa_caja : MonoBehaviour
             Debug.Log("raito dentro");
             if (_inputHandler._chispa && _tapa.abierto && _roto._bandera)
             {
+                JointLimits limits = _hingeJoint.limits;
+                limits.min = 0;
+                limits.bounciness = 0;
+                limits.bounceMinVelocity = 0;
+                limits.max = 0;
+                _hingeJoint.limits = limits;
+                _hingeJoint2.limits = limits;
+                Debug.Log("dentro de parar motor");
+                _hingeJoint.useLimits = true;
+                _hingeJoint.useMotor = false;
 
-                
-
-                    Debug.Log("dentro de parar motor");
-                    _hingeJoint.useMotor = false;
-                    _hingeJoint.useLimits = true;
-
-                _hingeJoint2.useMotor = false;
                 _hingeJoint2.useLimits = true;
+                _hingeJoint2.useMotor = false;
+                
+               topedeventilador.SetActive(false);
 
-
-                _inputHandler._chispa = false;
+               
                    
                 
 

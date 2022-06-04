@@ -89,7 +89,7 @@ public class ANCAMINAR : MonoBehaviour
         _controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
         _movement = GameObject.FindGameObjectWithTag("Player").GetComponent<SaltarParedes>();
         _arrastrar = GameObject.FindGameObjectWithTag("Player").GetComponent<Arrastrar>();
-         _scriptchispazo = GameObject.FindGameObjectWithTag("TriggerNiv4").GetComponent<TriggerNiv4>();
+       // _scriptchispazo = GameObject.FindGameObjectWithTag("TriggerNiv4").GetComponent<TriggerNiv4>();
          _animator = GetComponent<Animator>();
         
         _animator.SetBool(CAMINAR, isPulsediswalking);
@@ -365,8 +365,9 @@ public class ANCAMINAR : MonoBehaviour
         {
 
             _animator.SetBool("Chispazo", true);
-            _controller._chispa = false;
+            
             _controller.CHISPAZO = false;
+            StartCoroutine(Waiting());
         }
 
         else
@@ -409,4 +410,23 @@ public class ANCAMINAR : MonoBehaviour
 
 
     }
+
+
+
+
+
+    IEnumerator Waiting()
+    //void MakeSequence()Asi las hace todas jutas y no sirve
+    {
+
+      
+        yield return new WaitForSeconds(0.5f);
+        _controller._chispa = false;
+
+        yield return null;
+
+
+    }
+
+
 }

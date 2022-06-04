@@ -5,7 +5,7 @@ using System.Collections;
 
 public class ArrastrarHik : MonoBehaviour
 {
-    public float pushPower = 2.0F;
+    public float pushPower = 2.0f;
     public AudioSource _audioarrastrarObjeto;
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
