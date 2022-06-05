@@ -6,7 +6,8 @@ public class Romper_cristal : MonoBehaviour
 {
     public bool explotar;
     public GameObject Destroyed;
- 
+    private Vector3 pos = new Vector3(-3.22f, 11.01f, -1.3f);
+    private Vector3 rot = new Vector3(-90f, 0f, 0f);
     Controller _inputHandler;
     // Start is called before the first frame update
     void Start()
