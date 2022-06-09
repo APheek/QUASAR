@@ -74,7 +74,7 @@ public class HikariFollow : MonoBehaviour
         //Debug.Log("MUEVE HOSTIA");
 
         Vector3 position = (transform.position);
-        position.y = (target.position + offset).y + 1.3f;
+        position.y = (target.position + offset).y + 0.5f;
         position.x = (target.position + offset).x;
         position.z = (target.position + offset).z;
 

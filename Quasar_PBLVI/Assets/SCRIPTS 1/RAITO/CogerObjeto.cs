@@ -146,7 +146,7 @@ public class CogerObjeto : MonoBehaviour
         //yield return new WaitForSeconds(1.27f);
         //LO SIGUIENTE ES PARA USAR SIEMPRE LA MISMA FUNCION.
 
-        yield return StartCoroutine(SetPosition(0.35f, exit));
+        yield return StartCoroutine(SetPosition(0.45f, exit));
 
         //yield return new WaitForSeconds(0.1f);
         Debug.Log("La bandera esta en " + bandera);
