@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 9066350062350119644}
   - component: {fileID: 9066350062350119647}
   - component: {fileID: 9066350062350119640}
+  - component: {fileID: 4808428011648220681}
   - component: {fileID: 9066350062350119641}
   m_Layer: 0
   m_Name: PLAYER
@@ -286,6 +287,9 @@ MonoBehaviour:
   wallmask:
     serializedVersion: 2
     m_Bits: 8
+  groundmask:
+    serializedVersion: 2
+    m_Bits: 0
   isonwall: 0
   frontCheck: {fileID: 0}
   wallSlidingSpeed: 0
@@ -313,6 +317,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7a083c70fc93046b031ea18f3e2898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4808428011648220681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9066350062350119633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad628784d10e9649a180208e2426584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeed: 250
+  damping: 40
+  smooth: 0.1
+  _agachandose: 0
+  _audiocaminar: {fileID: 0}
+  _audiocorrer: {fileID: 0}
+  _audioagacharse: {fileID: 0}
+  _audiosaltar: {fileID: 0}
+  _audioarrastrar: {fileID: 0}
+  speed: 0
+  gravity: 25
+  wallmask:
+    serializedVersion: 2
+    m_Bits: 0
+  groundmask:
+    serializedVersion: 2
+    m_Bits: 0
+  isonwall: 0
+  frontCheck: {fileID: 0}
+  wallSlidingSpeed: 0
+  CAMINANDO: 0
+  AGACHARSE: 0
+  CUCLILLAS: 0
+  SALTAR: 0
+  ESTCAM: 0
+  CORRER: 0
+  TRANSCORRCAM: 0
+  WALLJUMP: 0
+  WALLJUMPA: 0
+  DESLIZARSE: 0
+  SALTOPARED: 0
+  EMPCAM: 0
 --- !u!114 &9066350062350119641
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class SaltarParedes : MonoBehaviour
 {
-    
 
+    public bool cambiarcaminar;
 
 
     private float desiredRot;
@@ -79,6 +79,7 @@ public class SaltarParedes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cambiarcaminar = false;
     ESTCAM = false;
         CAMINANDO = false;
         AGACHARSE = false;

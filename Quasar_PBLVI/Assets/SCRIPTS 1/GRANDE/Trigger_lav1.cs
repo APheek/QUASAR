@@ -19,12 +19,19 @@ public class Trigger_lav1 : MonoBehaviour
     private const string CANVA = "canva_a_negro";
     public bool isPulsediscanva = false;
 
+    CAMBIARHIK cambiarkik;
+    SaltarParedes _saltarparedes;
+    Caminar_bosque _movementbosque;
+
     // Start is called before the first frame update
     void Start()
     {
         _animator.SetBool(PUERTABOSQUE, isPulsedispuertabosque);
         _animator2.SetBool(CANVA, isPulsediscanva);
         _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
+        _saltarparedes =GameObject.FindGameObjectWithTag("Player").GetComponent<SaltarParedes>();
+        _movementbosque = GameObject.FindGameObjectWithTag("Player").GetComponent<Caminar_bosque>();
+        cambiarkik = GameObject.FindGameObjectWithTag("Player").GetComponent<CAMBIARHIK>();
     }
 
     // Update is called once per frame
@@ -65,7 +72,9 @@ public class Trigger_lav1 : MonoBehaviour
         yield return new WaitForSeconds(1f);
         CamaraActivar.enabled = true;
         Camaradesactivar.enabled = false;
-        
+        cambiarkik.cambiarcaminar = true;
+        _movementbosque.enabled = false;
+
         yield return null;
 
         // transform.localPosition = endpos;

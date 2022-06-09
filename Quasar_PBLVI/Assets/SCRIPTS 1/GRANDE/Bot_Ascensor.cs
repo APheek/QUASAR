@@ -51,7 +51,7 @@ public class Bot_Ascensor : MonoBehaviour
                // _volarhik.enabled = false;
                 //_scriptseguirhikari.enabled = true;
                 _roto._bandera = false;
-                _inputHandler.movimientoascensor = true;
+                _inputHandler.movimientoascensor = false;
             }
 
         }

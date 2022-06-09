@@ -72,7 +72,8 @@ public class ANCAMINAR : MonoBehaviour
 
     Controller _controller;
     SaltarParedes _movement;
-        Arrastrar _arrastrar;
+    Caminar_bosque _movementbosque;
+    Arrastrar _arrastrar;
         TriggerNiv4 _scriptchispazo;
     CogerObjeto _cogerobjeto;
     Empujar_atraer _empujaratraer;
@@ -88,6 +89,7 @@ public class ANCAMINAR : MonoBehaviour
         _cogerobjeto = GameObject.FindGameObjectWithTag("HandCoger").GetComponent<CogerObjeto>();
         _controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
         _movement = GameObject.FindGameObjectWithTag("Player").GetComponent<SaltarParedes>();
+        _movementbosque = GameObject.FindGameObjectWithTag("Player").GetComponent<Caminar_bosque>();
         _arrastrar = GameObject.FindGameObjectWithTag("Player").GetComponent<Arrastrar>();
        // _scriptchispazo = GameObject.FindGameObjectWithTag("TriggerNiv4").GetComponent<TriggerNiv4>();
          _animator = GetComponent<Animator>();
@@ -123,7 +125,8 @@ public class ANCAMINAR : MonoBehaviour
     void Update()
     {
         //Debug.Log(_arrastrar.EMPUJAR);
-        if (_movement.CAMINANDO){
+        if (_movement.CAMINANDO || _movementbosque.CAMINANDO)
+        {
 
              _animator.SetBool("Iswalking", true);
 
@@ -135,7 +138,7 @@ public class ANCAMINAR : MonoBehaviour
         }
 
         ///////////////////////TRANSICION CORRER CAMINAR
-        if (_movement.TRANSCORRCAM)
+        if (_movement.TRANSCORRCAM || _movementbosque.TRANSCORRCAM)
         {
 
             _animator.SetBool("TransCorrCam", true);
@@ -152,7 +155,7 @@ public class ANCAMINAR : MonoBehaviour
 
         //////////////////////WALL JUMP
         ////////////SALTO SUELO PARED
-        if (_movement.SALTOPARED)
+        if (_movement.SALTOPARED || _movementbosque.SALTOPARED)
         {
 
             _animator.SetBool("SaltoPared", true);
@@ -167,7 +170,7 @@ public class ANCAMINAR : MonoBehaviour
 
 
         /////////WALLJUMP
-        if (_movement.WALLJUMP)
+        if (_movement.WALLJUMP || _movementbosque.WALLJUMP)
         {
 
             _animator.SetBool("WallJump", true);
@@ -183,7 +186,7 @@ public class ANCAMINAR : MonoBehaviour
         /////////DESLIZARSE
 
 
-        if (_movement.DESLIZARSE)
+        if (_movement.DESLIZARSE || _movementbosque.DESLIZARSE)
         {
 
             _animator.SetBool("Des", true);
@@ -203,7 +206,7 @@ public class ANCAMINAR : MonoBehaviour
         /////////WALJUMPA
 
 
-        if (_movement.WALLJUMPA)
+        if (_movement.WALLJUMPA || _movementbosque.WALLJUMPA)
         {
 
             _animator.SetBool("WallJumpA", true);
@@ -221,7 +224,7 @@ public class ANCAMINAR : MonoBehaviour
 
 
         //////////////////////IS ON WALL
-        if (_movement.isonwall)
+        if (_movement.isonwall || _movementbosque.isonwall)
         {
 
             _animator.SetBool("isonwall", true);
@@ -238,7 +241,7 @@ public class ANCAMINAR : MonoBehaviour
 
 
         ///////////////CORRER
-        if (_movement.CORRER)
+        if (_movement.CORRER || _movementbosque.CORRER)
         {
 
             _animator.SetBool("Isrunning", true);
@@ -253,7 +256,7 @@ public class ANCAMINAR : MonoBehaviour
 
         //ACACHARSE Y CUCLILLAS
 
-        if (_movement.AGACHARSE)
+        if (_movement.AGACHARSE || _movementbosque.AGACHARSE)
         {
 
             _animator.SetBool("Agacharse", true);
@@ -265,7 +268,7 @@ public class ANCAMINAR : MonoBehaviour
         }
 
 
-        if (_movement.CUCLILLAS)
+        if (_movement.CUCLILLAS || _movementbosque.CUCLILLAS)
         {
             Debug.Log("estoy en cuclillas");
 
@@ -281,7 +284,8 @@ public class ANCAMINAR : MonoBehaviour
 
         //SALTAR
 
-        if (_movement.SALTAR){
+        if (_movement.SALTAR || _movementbosque.SALTAR)
+        {
             
         _animator.SetBool("Jumping", true);
         }
@@ -294,7 +298,8 @@ public class ANCAMINAR : MonoBehaviour
         //SALTAR PARED
 
 
-        if(_movement.WALLJUMP){
+        if(_movement.WALLJUMP || _movementbosque.WALLJUMP)
+        {
             //WALLJUMPA = false;
         _animator.SetBool("WallJump", true);
         }
@@ -335,7 +340,7 @@ public class ANCAMINAR : MonoBehaviour
         }
 
 
-        if (_movement.EMPCAM)
+        if (_movement.EMPCAM || _movementbosque.EMPCAM)
         {
 
             _animator.SetBool("EmpCam", true);
@@ -347,7 +352,7 @@ public class ANCAMINAR : MonoBehaviour
         }
 
 
-        if (_movement.ESTCAM)
+        if (_movement.ESTCAM || _movementbosque.ESTCAM)
         {
 
             _animator.SetBool("EstCam", true);

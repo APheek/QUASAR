@@ -31,7 +31,7 @@ public class RotoHik : MonoBehaviour
         {
             
                 Debug.Log("Hikari is on the air");
-                _bandera = true;
+            _bandera = true ;
             
            
             

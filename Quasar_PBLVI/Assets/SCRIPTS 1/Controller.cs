@@ -67,7 +67,7 @@ public bool _pared;
     // Start is called before the first frame update
     void Start()
     {
-        movimientoascensor = false;
+        movimientoascensor = true;
         saltarparedes = GameObject.FindGameObjectWithTag("Player").GetComponent<SaltarParedes>();
 
         _characterController = GetComponent <CharacterController>();
