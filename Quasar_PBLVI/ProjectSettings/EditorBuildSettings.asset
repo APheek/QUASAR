@@ -5,7 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/MENUS/MenuInicial/MenuInicial.unity
+    guid: d346962234e46fd449451fd32b96ed28
+  - enabled: 1
+    path: Assets/Scenes/Cinematica/Cinematica.unity
+    guid: 86b63103afd4c9040b8e1942836af844
+  - enabled: 1
+    path: Assets/Scenes/lev_ventiladores/lev_vent.unity
+    guid: 0917b01314cdacc4dae72df2475d11d3
+  - enabled: 1
+    path: Assets/Scenes/MENUS/Controles/Controles.unity
+    guid: 40196d12a1cf3064f9e2947d8ab6f0c7
+  - enabled: 1
+    path: Assets/Scenes/MENUS/MenuPause/Pause.unity
+    guid: ad2d1ef3aae98bb4eba2e1eb8145a66c
+  - enabled: 1
+    path: Assets/Scenes/MENUS/SalirPause/SalirMenu.unity
+    guid: 6bc05da86301b8b489a6149f3cb7b9ba
+  - enabled: 1
+    path: Assets/Scenes/MENUS/SalirInicial/SalirSeguro.unity
+    guid: 071e7bf3671e09a4b936ae8034877543
+  - enabled: 1
+    path: Assets/Scenes/MENUS/Opciones/Opciones.unity
+    guid: b71186e78e8735e479f1da59c0f3969c
+  - enabled: 1
+    path: Assets/Scenes/MENUS/Opciones/Opciones - pause.unity
+    guid: b6252e1ffac976d4caef4018816c8af8
+  - enabled: 1
+    path: Assets/Scenes/MENUS/ReiniciarNivel/ReiniciarNivel.unity
+    guid: d0f57cc504a8af94cbaa6c539979670e
   m_configObjects: {}
