@@ -227,8 +227,8 @@ public class Caminar_bosque : MonoBehaviour
 
                 if (_inputHandler._jump)
                 {
-                    StartCoroutine(Waiting(2));
-                    _audiosaltar.Play();
+                    StartCoroutine(Waiting(0.3f, _audiosaltar));
+                   
                     verticalVelocity = jumpforce;
                     _inputHandler._jump = false;
                     TRANSCORRCAM = true;
@@ -530,10 +530,12 @@ public class Caminar_bosque : MonoBehaviour
 
 
 
-    IEnumerator Waiting(float duration) //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
+    IEnumerator Waiting(float duration, AudioSource audio) //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
     {
 
         yield return new WaitForSeconds(duration);
+        audio.Play();
+       
 
     }
 
