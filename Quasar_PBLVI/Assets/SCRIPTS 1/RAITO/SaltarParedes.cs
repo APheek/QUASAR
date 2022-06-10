@@ -195,8 +195,8 @@ public class SaltarParedes : MonoBehaviour
             // Debug.Log(controller.isGrounded);
             Correr();
             moveVector = Vector3.zero;
-            moveVector.x = _inputHandler.Horizontal * speed;
-            moveVector.z = _inputHandler.Vertical * speed;
+            moveVector.x = _inputHandler.Horizontal * speed * Time.deltaTime;
+            moveVector.z = _inputHandler.Vertical * speed * Time.deltaTime;
             if (moveVector.z > 0)
             {
                 desiredRot -= rotSpeed * Time.deltaTime;
