@@ -10,10 +10,13 @@ public class HikariFollow : MonoBehaviour
     public Vector3 offsethor;
     public Vector3 current;
     public float _distance;
+
+    CAMBIARHIK cambiarkik;
     void Start()
     {
 
         z = transform.position.z;
+        cambiarkik = GameObject.FindGameObjectWithTag("Player").GetComponent<CAMBIARHIK>();
     }
 
     void Update()
@@ -74,11 +77,17 @@ public class HikariFollow : MonoBehaviour
         //Debug.Log("MUEVE HOSTIA");
 
         Vector3 position = (transform.position);
-        position.y = (target.position + offset).y + 0.5f;
-        position.x = (target.position + offset).x;
-        position.z = (target.position + offset).z;
+        position.y = target.position.y + 0.8f;
 
-
+        if (cambiarkik.cambiarcaminar)
+        {
+            position.x = (target.position + offset).x - 0.7f;
+            position.z = (target.position + offset).z ;
+        }
+        else { 
+            position.x = (target.position + offset).x;
+            position.z = (target.position + offset).z - 0.7f;
+        }
 
         float smoothedPositionx = Mathf.Lerp(transform.position.x, position.x, smoothSpeed * Time.deltaTime);
         float smoothedPositionz = Mathf.Lerp(transform.position.z, position.z, smoothSpeed * Time.deltaTime);
