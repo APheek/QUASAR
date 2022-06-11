@@ -31,6 +31,7 @@ TagManager:
   - Roto
   - Romper_cristal
   - Roto2
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

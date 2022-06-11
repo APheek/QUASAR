@@ -190,7 +190,7 @@ public class Caminar_bosque : MonoBehaviour
 
         else
         {
-            SALTAR = _inputHandler._jump;
+            //SALTAR = _inputHandler._jump;
             // Debug.Log(controller.isGrounded);
             Correr();
             moveVector = Vector3.zero;
@@ -227,6 +227,7 @@ public class Caminar_bosque : MonoBehaviour
 
                 if (_inputHandler._jump)
                 {
+                    SALTAR = true;
                     StartCoroutine(Waiting(0.3f, _audiosaltar));
                    
                     verticalVelocity = jumpforce;

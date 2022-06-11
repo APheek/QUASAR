@@ -291,6 +291,9 @@ public class ANCAMINAR : MonoBehaviour
         {
             
         _animator.SetBool("Jumping", true);
+
+            
+            StartCoroutine(Waiting(0.2f));
         }
 
         else{
@@ -375,7 +378,7 @@ public class ANCAMINAR : MonoBehaviour
             _animator.SetBool("Chispazo", true);
             
             _controller.CHISPAZO = false;
-            StartCoroutine(Waiting());
+            StartCoroutine(Waiting(0.5f));
         }
 
         else
@@ -406,7 +409,8 @@ public class ANCAMINAR : MonoBehaviour
         {
 
             _animator.SetBool("Soltar", true);
-            _cogerobjeto.SOLTAR = false;
+            
+
 
         }
 
@@ -440,13 +444,15 @@ public class ANCAMINAR : MonoBehaviour
 
 
 
-    IEnumerator Waiting()
+    IEnumerator Waiting( float timing)
     //void MakeSequence()Asi las hace todas jutas y no sirve
     {
 
       
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(timing);
         _controller._chispa = false;
+        _movementbosque.SALTAR = false;
+        _movement.SALTAR = false;
 
         yield return null;
 

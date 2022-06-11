@@ -60,7 +60,8 @@ public bool _pared;
      private Vector2 _subircuerda;
     //private Vector2 _movementv;
 
-
+    public bool nomoverse;
+    public bool nocorrer;
 
 
     /// ANIMACIONES
@@ -80,6 +81,8 @@ public bool _pared;
        _boton = false;
        _puedopulsarlo = false;
         puedegirar = true;
+        nomoverse = true;
+        nocorrer = false;
 
     }
 
@@ -98,7 +101,7 @@ public bool _pared;
 
         //Debug.Log("MOVER");
 
-        if (puedegirar)
+        if (puedegirar && nomoverse)
         {
             _movementc = inputValueh.Get<Vector2>();
         }
@@ -128,7 +131,7 @@ public bool _pared;
     private void OnCorrer ()
     {
 
-        if (_agacharse==true || saltarparedes.AGACHARSE==true)
+        if (_agacharse==true || saltarparedes.AGACHARSE==true || nocorrer)
         {
             _run = false;
         }
@@ -158,12 +161,13 @@ public bool _pared;
 
 
     private void OnJump(){
-        if (_agacharse == true || saltarparedes.AGACHARSE == true)
+        if (_agacharse == true || saltarparedes.AGACHARSE == true || nocorrer)
         {
             _jump = false;
         }
         else
         {
+            Debug.Log("estoy saltando a full");
             _jump = true;
         }
         

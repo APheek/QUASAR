@@ -7,7 +7,10 @@ using UnityEngine.InputSystem;
 public class CogerObjeto : MonoBehaviour
 {
       //CharacterController _characterController;
+   
+   
     Controller _inputHandler;
+
     public GameObject _handpoint;
     public GameObject _handpause;
     public GameObject _handend;
@@ -61,7 +64,8 @@ public class CogerObjeto : MonoBehaviour
             //Debug.Log("objeto");
             //Debug.Log(pickedObject==null);
             if ((_inputHandler._coger) && (pickedObject==null)){
-                
+                _inputHandler.nomoverse = false;
+                _inputHandler.nocorrer = true;
                 COGER = true;
               // Debug.Log("cogido");
                other.GetComponent<Rigidbody>().useGravity = false; 
@@ -103,7 +107,7 @@ public class CogerObjeto : MonoBehaviour
         //LO SIGUIENTE ES PARA USAR SIEMPRE LA MISMA FUNCION.
 
         yield return StartCoroutine(SetPosition(0.6f, myVector));
-
+        _inputHandler.nomoverse = true;
         yield return null;
 
        
@@ -187,6 +191,7 @@ public class CogerObjeto : MonoBehaviour
 
                 if (bandera == true)
                 {
+                    _inputHandler.nocorrer = false;
                     _audiosoltar.Play();
                     bandera = false;
                     Debug.Log("estoy dentro del true");

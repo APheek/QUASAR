@@ -191,7 +191,7 @@ public class SaltarParedes : MonoBehaviour
 
         else
         {
-             SALTAR = _inputHandler._jump;
+             
             // Debug.Log(controller.isGrounded);
             Correr();
             moveVector = Vector3.zero;
@@ -228,10 +228,11 @@ public class SaltarParedes : MonoBehaviour
 
                 if (_inputHandler._jump)
                 {
+                    SALTAR = true;
                      StartCoroutine(Waiting(0.3f, _audiosaltar));
                     verticalVelocity = jumpforce;
                     _inputHandler._jump = false;
-                                                                SALTAR = false;
+
                     TRANSCORRCAM = true;
 
                 }
@@ -354,8 +355,8 @@ public class SaltarParedes : MonoBehaviour
 
             if (_inputHandler._jump)
             {
+              
 
-                
                 WALLJUMP = true;
                 WALLJUMPA = true;
                
