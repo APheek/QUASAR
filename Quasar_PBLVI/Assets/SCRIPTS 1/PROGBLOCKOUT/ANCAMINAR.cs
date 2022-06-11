@@ -409,7 +409,7 @@ public class ANCAMINAR : MonoBehaviour
         {
 
             _animator.SetBool("Soltar", true);
-            
+            _cogerobjeto.SOLTAR = false;
 
 
         }

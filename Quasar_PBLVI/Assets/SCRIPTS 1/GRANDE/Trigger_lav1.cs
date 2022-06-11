@@ -62,15 +62,13 @@ public class Trigger_lav1 : MonoBehaviour
 
     IEnumerator Waiting() //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
         _animator2.SetBool("canva_a_negro", true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         _player.transform.position = _checkpoint.transform.position;
-        _player.transform.rotation = _checkpoint.transform.rotation;
-        
-
-        yield return new WaitForSeconds(1f);
-        CamaraActivar.enabled = true;
+       // _player.transform.rotation = _checkpoint.transform.rotation;
+          
+       CamaraActivar.enabled = true;
         Camaradesactivar.enabled = false;
         cambiarkik.cambiarcaminar = true;
         _movementbosque.enabled = false;

@@ -200,7 +200,7 @@ public class CogerObjeto : MonoBehaviour
                     pickedObject.gameObject.transform.SetParent(null);
                     //Vector3 posicionhartaa= new Vector3 (0,0,0);
                     //_posicionharta.transform.position= posicionhartaa;
-                    pickedObject.GetComponent<Rigidbody>().AddForce(transform.forward * 500f, ForceMode.Acceleration);
+                    pickedObject.GetComponent<Rigidbody>().AddForce(transform.forward * 250f, ForceMode.Acceleration);
                     pickedObject.GetComponent<Rigidbody>().useGravity = true;
                     pickedObject = null;
                     _inputHandler._puedocoger = false;

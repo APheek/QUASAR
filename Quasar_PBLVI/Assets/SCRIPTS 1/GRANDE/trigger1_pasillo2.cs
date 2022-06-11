@@ -49,8 +49,8 @@ public class trigger1_pasillo2 : MonoBehaviour
 
     IEnumerator Waiting() //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
     {
-        yield return new WaitForSeconds(4f);
-        _animator.SetBool("canva_pasillo2", true);
+        yield return new WaitForSeconds(2f);
+       _animator.SetBool("canva_pasillo2", true);
         _animator2.SetBool("luz pasillo", true);
         _luces.Play();
         yield return null;
