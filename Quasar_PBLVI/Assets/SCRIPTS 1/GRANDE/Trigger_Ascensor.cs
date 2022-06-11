@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Trigger_Ascensor : MonoBehaviour
 {
+    public AudioSource _audioascensor;
     Controller _inputHandler;
     public GameObject jugador;
 
@@ -33,7 +34,7 @@ public class Trigger_Ascensor : MonoBehaviour
             jugador.gameObject.transform.SetParent(null);
             caja.gameObject.transform.SetParent(null);
             caja.GetComponent<Rigidbody>().useGravity = true;
-
+            _audioascensor.Stop();
         }
 
     }

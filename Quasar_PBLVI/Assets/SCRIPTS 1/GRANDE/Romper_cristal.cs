@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Romper_cristal : MonoBehaviour
 {
+    public AudioSource _rotocristal;
     public bool explotar;
     public GameObject Destroyed;
     private Vector3 pos = new Vector3(-3.22f, 11.01f, -1.3f);
@@ -35,6 +36,7 @@ public class Romper_cristal : MonoBehaviour
 
                 Instantiate(Destroyed, transform.position, transform.rotation);
                 Destroy(gameObject);
+                _rotocristal.Play();
 
 
             }

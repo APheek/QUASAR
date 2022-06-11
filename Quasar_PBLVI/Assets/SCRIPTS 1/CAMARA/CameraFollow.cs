@@ -27,10 +27,10 @@ public class CameraFollow : MonoBehaviour
   if (_inputHandler._cambio){
      // Debug.Log("estoydentrodecambio");
  Vector3 position = (transform.position);
- position.y = targetH.position.y;
-  position.x = targetH.position.x;
-  position.z = targetH.position.z;
-            Vector3 smoothedPosition = Vector3.Lerp (transform.position, position, smoothSpeed *Time.deltaTime);
+ position.y = (targetH.position + offset).y;
+  position.x = (targetH.position+ offset).x;
+  position.z = (targetH.position + offset).z;
+ Vector3 smoothedPosition = Vector3.Lerp (transform.position, position, smoothSpeed *Time.deltaTime);
  transform.position = position;
 
  transform.LookAt(targetH);

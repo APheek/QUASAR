@@ -12,10 +12,19 @@ public class SceneChange : MonoBehaviour
     public GameObject menuControles;
     public GameObject menuReiniciar;
 
+
+    public Transform checkpoint0;
+    public Transform checkpoint1;
+    public Transform checkpoint2;
+    public Transform checkpoint3;
+    public Transform checkpoint4;
+    public Transform _player;
+
+    CHECKPOINT checkpoint;
     // Start is called before the first frame update
     void Start()
     {
-        
+        checkpoint = GameObject.FindGameObjectWithTag("Checkpoint").GetComponent<CHECKPOINT>();
     }
 
     // Update is called once per frame
@@ -111,7 +120,34 @@ public class SceneChange : MonoBehaviour
 
     public void ReinicioCheckpoint()
     {
-        //AQUI VA EL CODIGO MARINA
+        if (checkpoint.contador==0)
+        {
+            _player.transform.position = checkpoint0.transform.position;
+        }
+        else if (checkpoint.contador == 1)
+        {
+            _player.transform.position = checkpoint1.transform.position;
+
+        }
+        else if (checkpoint.contador == 2)
+        {
+            _player.transform.position = checkpoint2.transform.position;
+
+        }
+        else if (checkpoint.contador == 3)
+        {
+            _player.transform.position = checkpoint3.transform.position;
+        }
+        else
+        {
+            _player.transform.position = checkpoint4.transform.position;
+
+        }
+
+        menuPausa.SetActive(false);
+        menuOpciones.SetActive(false);
+        menuControles.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void QuitGame()

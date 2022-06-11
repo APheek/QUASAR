@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Romper_plataforma : MonoBehaviour
 {
-    
+    public AudioSource _romperelsuelo;
     public GameObject Destroyed;
 
     
@@ -32,9 +32,9 @@ public class Romper_plataforma : MonoBehaviour
 
             Instantiate(Destroyed, transform.position, transform.rotation);
             Destroy(gameObject);
-           
+            _romperelsuelo.Play();
 
-            
+
 
         }
 

@@ -10,6 +10,9 @@ public class Controller : MonoBehaviour
    
 {
 
+    public AudioSource _audiocambiarhik;
+    public AudioSource _audiochispa;
+
     SaltarParedes saltarparedes;
 
 
@@ -102,9 +105,9 @@ public bool _pared;
     }
     private void OnCAMBIARHIKARI ()
     {
-       
 
-        _cambio= !_cambio;
+        _audiocambiarhik.Play();
+        _cambio = !_cambio;
       //  Debug.Log(_cambio);
     }
 
@@ -116,8 +119,8 @@ public bool _pared;
 
      private void OnCHISPA ()
     {
-       
-        _chispa=true;
+        _audiochispa.Play();
+         _chispa =true;
         //Debug.Log(_chispa);
         CHISPAZO = true;
     }

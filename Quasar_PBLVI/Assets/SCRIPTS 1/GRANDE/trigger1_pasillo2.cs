@@ -5,6 +5,9 @@ using UnityEngine;
 public class trigger1_pasillo2 : MonoBehaviour
 {
 
+    public AudioSource _luces;
+
+
     public Animator _animator;
     public Animator _animator2;
     private const string CANVAPASILLO2 = "canva_pasillo2";
@@ -49,6 +52,7 @@ public class trigger1_pasillo2 : MonoBehaviour
         yield return new WaitForSeconds(4f);
         _animator.SetBool("canva_pasillo2", true);
         _animator2.SetBool("luz pasillo", true);
+        _luces.Play();
         yield return null;
 
         // transform.localPosition = endpos;

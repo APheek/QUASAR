@@ -7,7 +7,7 @@ public class Caminar_bosque : MonoBehaviour
 {
 
 
-
+  //  public bool FLOTAR;
 
     private float desiredRot;
     public float rotSpeed = 250;
@@ -174,7 +174,7 @@ public class Caminar_bosque : MonoBehaviour
 
             else
             {
-
+                //FLOTAR = true;
                 moveVector = Vector3.zero;
                 verticalVelocity -= gravity * Time.deltaTime;
                 moveVector.y = verticalVelocity;
@@ -256,6 +256,11 @@ public class Caminar_bosque : MonoBehaviour
 
                 }
 
+                ////else if (Physics.CheckSphere(transform.position + transform.up * -0.5f, 0.2f, groundmask))
+                ////{
+                ////    FLOTAR = true;
+                ////}
+
                 else
                 {
                     verticalVelocity -= gravity * Time.deltaTime;
@@ -301,6 +306,11 @@ public class Caminar_bosque : MonoBehaviour
                 {
                     CAMINANDO = false;
                     CORRER = true;
+                    if (_audiocorrer.isPlaying == false)
+                    {
+                        _audiocorrer.Play();
+                    }
+                   
                 }
 
             }
@@ -530,15 +540,15 @@ public class Caminar_bosque : MonoBehaviour
 
 
 
+
     IEnumerator Waiting(float duration, AudioSource audio) //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
     {
 
         yield return new WaitForSeconds(duration);
         audio.Play();
-       
+
 
     }
-
 
 
 

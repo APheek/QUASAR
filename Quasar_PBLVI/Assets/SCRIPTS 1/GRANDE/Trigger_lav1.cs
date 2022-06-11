@@ -14,7 +14,7 @@ public class Trigger_lav1 : MonoBehaviour
     public Animator _animator2;
     private const string PUERTABOSQUE = "Puertabosque";
     public bool isPulsedispuertabosque = false;
-
+    public AudioSource _ambientebosque;
 
     private const string CANVA = "canva_a_negro";
     public bool isPulsediscanva = false;
@@ -49,7 +49,7 @@ public class Trigger_lav1 : MonoBehaviour
         {
             _animator.SetBool("Puertabosque", false);
 
-
+            _ambientebosque.Stop();
             StartCoroutine(Waiting());
            
 

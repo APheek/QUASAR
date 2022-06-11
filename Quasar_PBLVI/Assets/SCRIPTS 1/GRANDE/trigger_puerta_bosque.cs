@@ -5,14 +5,15 @@ using UnityEngine;
 public class trigger_puerta_bosque : MonoBehaviour
 {
     public Animator _animator;
-
-
+    Controller _inputHandler;
+    public AudioSource _abrirpuerta;
     private const string PUERTABOSQUE = "Puertabosque";
     public bool isPulsedispuertabosque = false;
     // Start is called before the first frame update
     void Start()
     {
         _animator.SetBool(PUERTABOSQUE, isPulsedispuertabosque);
+        _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
     }
 
     // Update is called once per frame
@@ -23,16 +24,19 @@ public class trigger_puerta_bosque : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-
-        if (other.gameObject.CompareTag("Objeto"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            _animator.SetBool("Puertabosque", true);
+            if (_inputHandler._coger)
+            {
+                _animator.SetBool("Puertabosque", true);
 
+                if (_abrirpuerta.isPlaying == false)
+                {
+                    _abrirpuerta.Play();
+                }
+            }
 
-           
-
-
-
+            
         }
 
     }

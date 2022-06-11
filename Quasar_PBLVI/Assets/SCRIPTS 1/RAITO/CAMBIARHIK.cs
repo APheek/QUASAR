@@ -14,6 +14,9 @@ public class CAMBIARHIK : MonoBehaviour
     Caminar_bosque _movementbosque;
 
 
+
+
+
     public bool cambiarcaminar;
 
     // Start is called before the first frame update

@@ -19,10 +19,11 @@ public class CogerObjeto : MonoBehaviour
     //ANIMACIONES
     public bool COGER;
     public bool SOLTAR;
-   
 
+    public AudioSource _audiocoger;
+    public AudioSource _audiosoltar;
 
-   // public GameObject _handpoint2;
+    // public GameObject _handpoint2;
 
 
 
@@ -67,6 +68,8 @@ public class CogerObjeto : MonoBehaviour
 
                other.GetComponent<Rigidbody>().isKinematic = true;
                 StartCoroutine(MakeSequence());
+                StartCoroutine(Waiting(0.8f, _audiocoger));
+               
                 other.transform.position = _handpoint.transform.position;
 
                 
@@ -184,6 +187,7 @@ public class CogerObjeto : MonoBehaviour
 
                 if (bandera == true)
                 {
+                    _audiosoltar.Play();
                     bandera = false;
                     Debug.Log("estoy dentro del true");
                     pickedObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -223,6 +227,15 @@ public class CogerObjeto : MonoBehaviour
             _inputHandler._puedocoger = false;
         }
 
+
+
+    }
+
+    IEnumerator Waiting(float duration, AudioSource audio) //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
+    {
+
+        yield return new WaitForSeconds(duration);
+        audio.Play();
 
 
     }

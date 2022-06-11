@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bot_Ascensor : MonoBehaviour
 {
 
-   
+    public AudioSource _audioascensor;
     Controller _inputHandler;
     RotoHik _roto;
     public Animator _animator;
@@ -46,7 +46,7 @@ public class Bot_Ascensor : MonoBehaviour
                 jugador.gameObject.transform.SetParent(ascensor.gameObject.transform);
                 caja.gameObject.transform.SetParent(ascensor.gameObject.transform);
                 caja.GetComponent<Rigidbody>().useGravity = false;
-
+                _audioascensor.Play();
                 caja.GetComponent<Rigidbody>().isKinematic = true;
                // _volarhik.enabled = false;
                 //_scriptseguirhikari.enabled = true;

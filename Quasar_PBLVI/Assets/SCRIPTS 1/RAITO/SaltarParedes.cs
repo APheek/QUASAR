@@ -69,7 +69,7 @@ public class SaltarParedes : MonoBehaviour
     public bool WALLJUMPA;
     public bool DESLIZARSE;
     public bool SALTOPARED;
-
+    //public bool FLOTAR;
     public bool EMPCAM;
 
 
@@ -175,7 +175,7 @@ public class SaltarParedes : MonoBehaviour
 
             else
             {
-
+               // FLOTAR = true;
                 moveVector = Vector3.zero;
                 verticalVelocity -= gravity * Time.deltaTime;
                 moveVector.y = verticalVelocity;
@@ -217,8 +217,8 @@ public class SaltarParedes : MonoBehaviour
 
             if (controller.isGrounded)
             {
+               
 
-                
                 isonwall = false;
 
                 //contadorparedes = 0;
@@ -228,9 +228,10 @@ public class SaltarParedes : MonoBehaviour
 
                 if (_inputHandler._jump)
                 {
-                    _audiosaltar.Play();
+                     StartCoroutine(Waiting(0.3f, _audiosaltar));
                     verticalVelocity = jumpforce;
                     _inputHandler._jump = false;
+                                                                SALTAR = false;
                     TRANSCORRCAM = true;
 
                 }
@@ -256,8 +257,14 @@ public class SaltarParedes : MonoBehaviour
 
                 }
 
+                //else if (Physics.CheckSphere(transform.position + transform.up * -0.5f, 0.2f, groundmask))
+                //{
+                //    FLOTAR = true;
+                //}
+
                 else
                 {
+                    //FLOTAR = true;
                     verticalVelocity -= gravity * Time.deltaTime;
                     DESLIZARSE = false;
                     _audioarrastrar.Stop();
@@ -301,7 +308,12 @@ public class SaltarParedes : MonoBehaviour
                 {
                     CAMINANDO = false;
                     CORRER = true;
-                }
+                    if (_audiocorrer.isPlaying == false)
+                    {
+                        _audiocorrer.Play();
+                    }
+
+                    }
 
             }
 
@@ -531,7 +543,14 @@ public class SaltarParedes : MonoBehaviour
 
 
 
+    IEnumerator Waiting(float duration, AudioSource audio) //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
+    {
 
+        yield return new WaitForSeconds(duration);
+        audio.Play();
+
+
+    }
 
 
 

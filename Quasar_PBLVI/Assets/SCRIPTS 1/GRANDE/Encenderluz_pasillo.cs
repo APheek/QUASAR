@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Encenderluz_pasillo : MonoBehaviour
 {
+
+    public AudioSource _luces;
     public Animator _animator;
     //private const string CANVAPASILLO2 = "canva_pasillo2";
     //public bool isPulsediscanvapasillo2 = false;
@@ -30,7 +32,7 @@ public class Encenderluz_pasillo : MonoBehaviour
 
             _animator.SetBool("luz pasillo", true);
 
-
+            _luces.Play();
 
         }
 

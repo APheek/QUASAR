@@ -68,7 +68,10 @@ public class ANCAMINAR : MonoBehaviour
     public bool isPulsedIsestirarcam = false;
 
 
-    
+
+    private const string FLOTAR = "Flotando";
+    public bool isPulsedisFlotando = false;
+
 
     Controller _controller;
     SaltarParedes _movement;
@@ -93,7 +96,7 @@ public class ANCAMINAR : MonoBehaviour
         _arrastrar = GameObject.FindGameObjectWithTag("Player").GetComponent<Arrastrar>();
        // _scriptchispazo = GameObject.FindGameObjectWithTag("TriggerNiv4").GetComponent<TriggerNiv4>();
          _animator = GetComponent<Animator>();
-        
+        _animator.SetBool(FLOTAR, isPulsedisFlotando);
         _animator.SetBool(CAMINAR, isPulsediswalking);
          _animator.SetBool(AGACHARSE, isPulsedIsCrouching);
          _animator.SetBool(CUCLILLAS, isPulsedIsCuclillas);
@@ -411,6 +414,23 @@ public class ANCAMINAR : MonoBehaviour
         {
             _animator.SetBool("Soltar", false);
         }
+
+
+        ///////////////////////FLOAT
+        ////////if (_movementbosque.FLOTAR)
+        ////////{
+
+        ////////    _animator.SetBool("Flotando", true);
+          
+
+        ////////}
+
+        ////////else
+        ////////{
+        ////////    _animator.SetBool("Flotando", false);
+        ////////}
+
+
 
 
 

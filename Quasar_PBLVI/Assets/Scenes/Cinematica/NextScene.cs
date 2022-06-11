@@ -21,7 +21,7 @@ public class NextScene : MonoBehaviour
 
     IEnumerator Change()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(32);
         SceneManager.LoadScene(2);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tuberia_torcerse : MonoBehaviour
 {
-
+    public AudioSource _gas;
     private Animator _animator;
     private const string GIRAR = "Tub_gir";
     public bool isPulsedisrotate= false;
@@ -36,6 +36,7 @@ public class Tuberia_torcerse : MonoBehaviour
         {
             _animator.SetBool("Tub_gir", true);
             explote.explotar = true;
+            _gas.Play();
         }
     }
 
