@@ -2,15 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
+
 
 public class TutorialPlayer : MonoBehaviour
 {
-    public VideoPlayer VideoTutorial;
+    public GameObject ActivateAnimation;
     private bool i;
     void Start()
     {
-        VideoTutorial = GetComponent<VideoPlayer>();
         i = true;
     }
 
@@ -24,16 +23,20 @@ public class TutorialPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+
             if (i == true)
             {
-                PlayAnimation();
+                StartCoroutine(SetTutorial());
             }
         }
     }
 
-    private void PlayAnimation()
+    IEnumerator SetTutorial()
     {
-        VideoTutorial.Play();
+        ActivateAnimation.SetActive(true);
+        yield return new WaitForSeconds(10);
+        ActivateAnimation.SetActive(false);
         i = false;
     }
+
 }
