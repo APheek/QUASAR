@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24894d752dffbf0438baf2ca8ede38bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 1067273917}
-  timeToStop: 0.07
+  timeToStop: 7
+  nextScene: 0
 --- !u!4 &836143464
 Transform:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class NextScene : MonoBehaviour
     
    // public GameObject videoPlayer;
     public float timeToStop;
+    public int nextScene;
     void Start()
     {
         StartCoroutine(Change());
@@ -21,7 +22,7 @@ public class NextScene : MonoBehaviour
 
     IEnumerator Change()
     {
-        yield return new WaitForSeconds(7f);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(timeToStop);
+        SceneManager.LoadScene(nextScene);
     }
 }
