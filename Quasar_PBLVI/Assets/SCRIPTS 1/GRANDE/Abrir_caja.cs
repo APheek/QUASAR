@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Abrir_caja : MonoBehaviour
 {
+    public AudioSource _abrircaja;
 
     private Rigidbody _rigidbody;
     private HingeJoint _hingeJoint;
 
     public JointMotor caneHingeMotor;
     public bool abierto;
+    private bool bandera;
+    private int contador;
 
 
     // Start is called before the first frame update
@@ -17,7 +20,7 @@ public class Abrir_caja : MonoBehaviour
     {
 
         abierto = false;
-
+        contador = 0;
 
         _hingeJoint = GetComponent<HingeJoint>();
         caneHingeMotor = _hingeJoint.motor;
@@ -34,14 +37,20 @@ public class Abrir_caja : MonoBehaviour
     {
 
     }
-    private void OnTriggerStay(Collider other)
-    {
-       
+  
 
+        private void OnTriggerStay(Collider other)
+    {
+
+        
         if (other.gameObject.CompareTag("Objeto"))
         {
-            _hingeJoint.useMotor = true;
-            abierto = true;
+           
+                _abrircaja.Play();
+                bandera = true;
+                _hingeJoint.useMotor = true;
+                abierto = true;
+            
         }
 
     }

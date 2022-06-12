@@ -6,6 +6,7 @@ public class poneraudioambiente : MonoBehaviour
 {
 
     public AudioSource _ambiente;
+    public AudioSource _ventiladoresconstantes;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class poneraudioambiente : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _ambiente.Play();
+            _ventiladoresconstantes.Play();
 
 
 

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Chispa_caja : MonoBehaviour
 {
-    
-        Abrir_caja _tapa;
+    public AudioSource _pararventiladoresconst;
+    public AudioSource _pararventiladores;
+    Abrir_caja _tapa;
     Controller _inputHandler;
     RotoHik _roto;
     public HingeJoint _hingeJoint;
@@ -44,6 +45,9 @@ public class Chispa_caja : MonoBehaviour
             Debug.Log("raito dentro");
             if (_inputHandler._chispa && _tapa.abierto && _roto._bandera)
             {
+                _pararventiladoresconst.Stop();
+                _pararventiladores.Play();
+               
                 JointLimits limits = _hingeJoint.limits;
                 limits.min = 0;
                 limits.bounciness = 0;

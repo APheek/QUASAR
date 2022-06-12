@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Trigger_lav1 : MonoBehaviour
 {
+
+    public AudioSource _cerrarpuerta;
+
+
     public Camera Camaradesactivar;
     public Camera CamaraActivar;
     public Transform _checkpoint;
@@ -48,8 +52,9 @@ public class Trigger_lav1 : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _animator.SetBool("Puertabosque", false);
-
+            _cerrarpuerta.Play();
             _ambientebosque.Stop();
+
             StartCoroutine(Waiting());
            
 
@@ -62,13 +67,16 @@ public class Trigger_lav1 : MonoBehaviour
 
     IEnumerator Waiting() //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
     {
-        yield return new WaitForSeconds(0.3f);
-        _animator2.SetBool("canva_a_negro", true);
         yield return new WaitForSeconds(0.5f);
+        _animator2.SetBool("canva_a_negro", true);
+        yield return new WaitForSeconds(0.1f);
         _player.transform.position = _checkpoint.transform.position;
-       // _player.transform.rotation = _checkpoint.transform.rotation;
-          
-       CamaraActivar.enabled = true;
+
+        
+        _player.rotation =  Quaternion.Euler(new Vector3(0, 120, 0));
+        // _player.transform.rotation = _checkpoint.transform.rotation;
+
+        CamaraActivar.enabled = true;
         Camaradesactivar.enabled = false;
         cambiarkik.cambiarcaminar = true;
         _movementbosque.enabled = false;
