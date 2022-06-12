@@ -6,18 +6,19 @@ public class Chispa_caja : MonoBehaviour
 {
     public AudioSource _pararventiladoresconst;
     public AudioSource _pararventiladores;
-    Abrir_caja _tapa;
+    
     Controller _inputHandler;
     RotoHik _roto;
     public HingeJoint _hingeJoint;
     public HingeJoint _hingeJoint2;
     public JointMotor caneHingeMotor;
     public GameObject topedeventilador;
+    public bool abierto;
 
     // Start is called before the first frame update
     void Start()
     {
-        _tapa = GameObject.FindGameObjectWithTag("TapaCajaEle").GetComponent<Abrir_caja>();
+       
         _roto = GameObject.FindGameObjectWithTag("Roto").GetComponent<RotoHik>();
         _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
 
@@ -31,7 +32,7 @@ public class Chispa_caja : MonoBehaviour
     void Update()
     {
         Debug.Log(_inputHandler._chispa + "chispa");
-        Debug.Log(_tapa.abierto + "abierto");
+        
         Debug.Log(_roto._bandera + "_roto");
     }
 
@@ -43,31 +44,33 @@ public class Chispa_caja : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("raito dentro");
-            if (_inputHandler._chispa && _tapa.abierto && _roto._bandera)
-            {
-                _pararventiladoresconst.Stop();
-                _pararventiladores.Play();
-               
-                JointLimits limits = _hingeJoint.limits;
-                limits.min = 0;
-                limits.bounciness = 0;
-                limits.bounceMinVelocity = 0;
-                limits.max = 0;
-                _hingeJoint.limits = limits;
-                _hingeJoint2.limits = limits;
-                Debug.Log("dentro de parar motor");
-                _hingeJoint.useLimits = true;
-                _hingeJoint.useMotor = false;
+           
+                if (_inputHandler._chispa && abierto && _roto._bandera)
+                {
+                    Debug.Log("Estoy entrando");
+                    _pararventiladoresconst.Stop();
+                    _pararventiladores.Play();
 
-                _hingeJoint2.useLimits = true;
-                _hingeJoint2.useMotor = false;
+                    JointLimits limits = _hingeJoint.limits;
+                    limits.min = 0;
+                    limits.bounciness = 0;
+                    limits.bounceMinVelocity = 0;
+                    limits.max = 0;
+                    _hingeJoint.limits = limits;
+                    _hingeJoint2.limits = limits;
+                    Debug.Log("dentro de parar motor");
+                    _hingeJoint.useLimits = true;
+                    _hingeJoint.useMotor = false;
+
+                    _hingeJoint2.useLimits = true;
+                    _hingeJoint2.useMotor = false;
+
+                    topedeventilador.SetActive(false);
+
+
+
+
                 
-               topedeventilador.SetActive(false);
-
-               
-                   
-                
-
             }
            
         }

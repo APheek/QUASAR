@@ -19,7 +19,7 @@ public class Controller : MonoBehaviour
 
     public bool movimientoascensor;
 
-
+    public bool puedesaltar;
 
     public bool puedegirar;
 
@@ -85,13 +85,14 @@ public bool _pared;
         nomoverse = true;
         nocorrer = false;
         puedechispa = true;
+        puedesaltar = true;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-    //Debug.Log(_scriptbotones._puedepulsarboton);
+    Debug.Log(puedesaltar + "SALTARCONT ROLER");
         //Debug.Log("coger en update");
        // Debug.Log(_coger);
     }
@@ -166,7 +167,8 @@ public bool _pared;
 
 
     private void OnJump(){
-        if (_agacharse == true || saltarparedes.AGACHARSE == true || nocorrer)
+        
+        if (_agacharse == true || saltarparedes.AGACHARSE == true || nocorrer || !puedesaltar)
         {
             _jump = false;
         }

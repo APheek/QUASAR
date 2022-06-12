@@ -75,7 +75,7 @@ public class Trigger_lav1 : MonoBehaviour
         
         _player.rotation =  Quaternion.Euler(new Vector3(0, 120, 0));
         // _player.transform.rotation = _checkpoint.transform.rotation;
-
+        
         CamaraActivar.enabled = true;
         Camaradesactivar.enabled = false;
         cambiarkik.cambiarcaminar = true;

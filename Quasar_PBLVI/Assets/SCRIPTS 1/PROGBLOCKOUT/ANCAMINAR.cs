@@ -289,11 +289,18 @@ public class ANCAMINAR : MonoBehaviour
 
         if (_movement.SALTAR || _movementbosque.SALTAR)
         {
-            
-        _animator.SetBool("Jumping", true);
+            _controller.puedesaltar = false;
+            _animator.SetBool("Jumping", true);
 
-            
+           
             StartCoroutine(Waiting(0.2f));
+            if (!_movement.isonwall){
+                StartCoroutine(Waiting2(0.6f));
+            }
+            else
+            {
+                _controller.puedesaltar = true;
+            }
         }
 
         else{
@@ -379,7 +386,7 @@ public class ANCAMINAR : MonoBehaviour
             
             _controller.CHISPAZO = false;
             
-           StartCoroutine(Waiting(0.5f));
+           StartCoroutine(Waiting(0.2f));
         }
 
         else
@@ -455,11 +462,27 @@ public class ANCAMINAR : MonoBehaviour
         _movementbosque.SALTAR = false;
         _movement.SALTAR = false;
         _controller.nomoverse = true;
+       
 
         yield return null;
 
 
     }
+    IEnumerator Waiting2(float timing)
+    //void MakeSequence()Asi las hace todas jutas y no sirve
+    {
+
+
+        yield return new WaitForSeconds(timing);
+        
+        _controller.puedesaltar = true;
+
+        yield return null;
+
+
+    }
+
+
 
 
 }

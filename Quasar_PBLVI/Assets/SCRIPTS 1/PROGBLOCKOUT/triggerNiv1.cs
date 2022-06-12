@@ -5,12 +5,12 @@ using UnityEngine;
 public class triggerNiv1 : MonoBehaviour
 {
 
-public bool _banderatriggerNiv1;
+public bool agacharsesi;
  public Transform _player;
     // Start is called before the first frame update
     void Start()
     {
-        _banderatriggerNiv1 = false;
+        agacharsesi = false;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public bool _banderatriggerNiv1;
         //var opendoor = other.GetComponent<opendoor>();
         if (other.gameObject.tag == "Player") //Esto nos hace saber si el other que ha entrado tiene o no un jumper añadido.
         {
-             _banderatriggerNiv1 = true;
+             agacharsesi = true;
            //Vector3 position = (transform.localPosition);  
         Debug.Log("he entrado en el trigger del boton");
        // float newz = 0.1f; 
@@ -52,7 +52,7 @@ public bool _banderatriggerNiv1;
         if (other.gameObject.tag == "Player") //Esto nos hace saber si el other que ha entrado tiene o no un jumper añadido.
         {
             
-        _banderatriggerNiv1= false;
+        agacharsesi= false;
            
         }
 

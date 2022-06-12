@@ -413,7 +413,7 @@ public class SaltarParedes : MonoBehaviour
 
 
 
-        if (_inputHandler._run || _inputHandler._agacharse || _sccripttriggerniv1._banderatriggerNiv1 || WALLJUMP)
+        if (_inputHandler._run || _inputHandler._agacharse || _sccripttriggerniv1.agacharsesi || WALLJUMP)
         {
             if (_inputHandler._run)
             {
@@ -459,7 +459,7 @@ public class SaltarParedes : MonoBehaviour
 
             }
 
-            else if (_agachandose && _sccripttriggerniv1._banderatriggerNiv1)
+            else if (_agachandose && _sccripttriggerniv1.agacharsesi)
             {
                 controller.height = 1.15f;
 

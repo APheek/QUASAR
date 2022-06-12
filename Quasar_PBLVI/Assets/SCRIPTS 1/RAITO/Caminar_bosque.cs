@@ -119,16 +119,16 @@ public class Caminar_bosque : MonoBehaviour
 
                 if (Mathf.Abs(Vector3.Dot(forward, Vector3.forward)) > 0.75f)
                 {
-                    this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Vertical * speed);
+                    this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Horizontal * speed);
                     Debug.Log("ws");
 
-                    if ((_inputHandler.Vertical * speed) > 0)
+                    if ((_inputHandler.Horizontal * speed) > 0)
                     {
                         EMPCAM = true;
                         ESTCAM = false;
                         Debug.Log(transform.forward);
                     }
-                    else if ((_inputHandler.Vertical * speed) < 0)
+                    else if ((_inputHandler.Horizontal * speed) < 0)
                     {
                         EMPCAM = false;
                         ESTCAM = true;
@@ -147,17 +147,17 @@ public class Caminar_bosque : MonoBehaviour
                 }
                 else
                 {
-                    this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Horizontal * speed);
+                    this.gameObject.transform.position += this.gameObject.transform.forward * Time.deltaTime * (_inputHandler.Vertical * speed);
                     Debug.Log("ad");
 
 
-                    if ((_inputHandler.Horizontal * speed) > 0)
+                    if ((_inputHandler.Vertical * speed) > 0)
                     {
                         EMPCAM = true;
                         ESTCAM = false;
                         Debug.Log(transform.forward);
                     }
-                    else if ((_inputHandler.Horizontal * speed) < 0)
+                    else if ((_inputHandler.Vertical * speed) < 0)
                     {
                         EMPCAM = false;
                         ESTCAM = true;
@@ -411,7 +411,7 @@ public class Caminar_bosque : MonoBehaviour
 
 
 
-        if (_inputHandler._run || _inputHandler._agacharse || _sccripttriggerniv1._banderatriggerNiv1 || WALLJUMP)
+        if (_inputHandler._run || _inputHandler._agacharse || _sccripttriggerniv1.agacharsesi || WALLJUMP)
         {
             if (_inputHandler._run)
             {
@@ -457,7 +457,7 @@ public class Caminar_bosque : MonoBehaviour
 
             }
 
-            else if (_agachandose && _sccripttriggerniv1._banderatriggerNiv1)
+            else if (_agachandose && _sccripttriggerniv1.agacharsesi)
             {
                 controller.height = 1.15f;
 
