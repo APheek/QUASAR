@@ -7,7 +7,7 @@ public class Bot_Ascensor : MonoBehaviour
 
     public AudioSource _audioascensor;
     Controller _inputHandler;
-    RotoHik _roto;
+    RotoHik2 _roto;
     public Animator _animator;
     private const string ASCENSOR = "Ascensor";
     public bool isPulsedisascensor = false;
@@ -20,7 +20,7 @@ public class Bot_Ascensor : MonoBehaviour
     {
         
         _animator.SetBool(ASCENSOR, isPulsedisascensor);
-        _roto = GameObject.FindGameObjectWithTag("Roto2").GetComponent<RotoHik>();
+        _roto = GameObject.FindGameObjectWithTag("Roto2").GetComponent<RotoHik2>();
         _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
     }
 

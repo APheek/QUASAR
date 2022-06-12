@@ -378,7 +378,8 @@ public class ANCAMINAR : MonoBehaviour
             _animator.SetBool("Chispazo", true);
             
             _controller.CHISPAZO = false;
-            StartCoroutine(Waiting(0.5f));
+            
+           StartCoroutine(Waiting(0.5f));
         }
 
         else
@@ -453,6 +454,7 @@ public class ANCAMINAR : MonoBehaviour
         _controller._chispa = false;
         _movementbosque.SALTAR = false;
         _movement.SALTAR = false;
+        _controller.nomoverse = true;
 
         yield return null;
 

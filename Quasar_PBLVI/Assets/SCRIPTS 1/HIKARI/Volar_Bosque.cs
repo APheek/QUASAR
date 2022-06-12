@@ -106,7 +106,7 @@ public class Volar_Bosque : MonoBehaviour
         _distance = Vector3.Distance(target.transform.localPosition, transform.localPosition);
 
 
-        if (_distance > 18 || debevolver)
+        if (_distance > 8 || debevolver)
         {
             Debug.Log(_distance);
             Debug.Log("distancia");

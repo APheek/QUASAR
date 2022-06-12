@@ -85,9 +85,9 @@ public class Empujar_atraer : MonoBehaviour
                 saltarparedes.speed = 1;
                 Arrastrando_objeto = true;
                 Debug.Log("cogido");
-                other.GetComponent<Rigidbody>().useGravity = false;
+                other.GetComponent<Rigidbody>().useGravity = true;
 
-                other.GetComponent<Rigidbody>().isKinematic = true;
+                other.GetComponent<Rigidbody>().isKinematic = false;
 
                // other.transform.position = _handpoint.transform.position;
 

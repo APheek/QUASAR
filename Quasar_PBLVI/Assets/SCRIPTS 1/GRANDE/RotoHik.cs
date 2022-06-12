@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class RotoHik : MonoBehaviour
 {
-
+    CameraFollow camara;
+    public Camera camarish;
     public bool _bandera;
-    
+   
+
     // Start is called before the first frame update
     void Start()
     {
+        camara = camarish.GetComponent<CameraFollow>();
         _bandera = false;
         
     }
@@ -32,9 +35,10 @@ public class RotoHik : MonoBehaviour
             
                 Debug.Log("Hikari is on the air");
             _bandera = true ;
-            
            
-            
+
+
+
         }
 
 
@@ -51,9 +55,37 @@ public class RotoHik : MonoBehaviour
         {
           
             _bandera = false;
-            
+            StartCoroutine(Waiting2());
+
         }
 
+
+    }
+
+
+
+
+
+    IEnumerator Waiting2() //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
+    {
+
+        Debug.Log("camarish");
+        Vector3 position = Vector3.zero;
+        position.y = 0.99f;
+        position.x = -0.01173f;
+        position.z = -2.82f;
+
+        float duration = 4;
+
+        for (float t = 0; t < duration; t += Time.deltaTime)
+        {
+
+            Vector3 smoothedPosition = Vector3.Lerp(camara.offset, position, 1f * Time.deltaTime);
+            camara.offset = smoothedPosition;
+            yield return null;
+
+        }
+        yield return null;
 
     }
 

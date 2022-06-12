@@ -32,6 +32,7 @@ TagManager:
   - Romper_cristal
   - Roto2
   - Checkpoint
+  - ContCam
   layers:
   - Default
   - TransparentFX

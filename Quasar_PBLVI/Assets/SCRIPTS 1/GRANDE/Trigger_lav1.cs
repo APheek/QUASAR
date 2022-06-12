@@ -73,6 +73,9 @@ public class Trigger_lav1 : MonoBehaviour
         cambiarkik.cambiarcaminar = true;
         _movementbosque.enabled = false;
 
+        _saltarparedes.TRANSCORRCAM = false;
+        _movementbosque.TRANSCORRCAM = false;
+
         yield return null;
 
         // transform.localPosition = endpos;

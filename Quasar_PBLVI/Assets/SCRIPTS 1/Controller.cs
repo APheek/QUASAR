@@ -15,6 +15,7 @@ public class Controller : MonoBehaviour
 
     SaltarParedes saltarparedes;
 
+    public bool puedechispa;
 
     public bool movimientoascensor;
 
@@ -83,7 +84,7 @@ public bool _pared;
         puedegirar = true;
         nomoverse = true;
         nocorrer = false;
-
+        puedechispa = true;
     }
 
     // Update is called once per frame
@@ -122,10 +123,14 @@ public bool _pared;
 
      private void OnCHISPA ()
     {
-        _audiochispa.Play();
-         _chispa =true;
-        //Debug.Log(_chispa);
-        CHISPAZO = true;
+        if (puedechispa)
+        {
+            _audiochispa.Play();
+            _chispa = true;
+            nomoverse = false;
+            //Debug.Log(_chispa);
+            CHISPAZO = true;
+        }
     }
 
     private void OnCorrer ()
