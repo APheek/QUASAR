@@ -10,6 +10,7 @@ public class HikariFollow : MonoBehaviour
     public Vector3 offsethor;
     public Vector3 current;
     public float _distance;
+    public float altura;
 
     CAMBIARHIK cambiarkik;
     void Start()
@@ -17,6 +18,7 @@ public class HikariFollow : MonoBehaviour
 
         z = transform.position.z;
         cambiarkik = GameObject.FindGameObjectWithTag("Player").GetComponent<CAMBIARHIK>();
+        altura = 0.8f;
     }
 
     void Update()
@@ -77,7 +79,7 @@ public class HikariFollow : MonoBehaviour
         //Debug.Log("MUEVE HOSTIA");
 
         Vector3 position = (transform.position);
-        position.y = target.position.y + 0.8f;
+        position.y = target.position.y + altura;
 
         if (cambiarkik.cambiarcaminar)
         {

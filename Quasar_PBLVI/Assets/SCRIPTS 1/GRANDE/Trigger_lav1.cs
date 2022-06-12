@@ -75,6 +75,7 @@ public class Trigger_lav1 : MonoBehaviour
 
         _saltarparedes.TRANSCORRCAM = false;
         _movementbosque.TRANSCORRCAM = false;
+        _movementbosque.CORRER = false;
 
         yield return null;
 

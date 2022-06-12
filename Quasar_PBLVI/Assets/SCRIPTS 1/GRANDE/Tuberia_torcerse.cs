@@ -6,6 +6,7 @@ public class Tuberia_torcerse : MonoBehaviour
 {
     public AudioSource _gas;
     private Animator _animator;
+    public GameObject Gas;
     private const string GIRAR = "Tub_gir";
     public bool isPulsedisrotate= false;
     Romper_cristal explote;
@@ -34,6 +35,7 @@ public class Tuberia_torcerse : MonoBehaviour
         
         if (other.gameObject.CompareTag("arrastrar"))
         {
+            Gas.SetActive(true);
             _animator.SetBool("Tub_gir", true);
             explote.explotar = true;
             _gas.Play();

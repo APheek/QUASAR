@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class NextScene : MonoBehaviour
 {
     
-    public GameObject videoPlayer;
+   // public GameObject videoPlayer;
     public float timeToStop;
     void Start()
     {
@@ -21,7 +21,7 @@ public class NextScene : MonoBehaviour
 
     IEnumerator Change()
     {
-        yield return new WaitForSeconds(32);
-        SceneManager.LoadScene(2);
+        yield return new WaitForSeconds(7f);
+        SceneManager.LoadScene(0);
     }
 }
