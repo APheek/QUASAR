@@ -33,6 +33,7 @@ TagManager:
   - Roto2
   - Checkpoint
   - ContCam
+  - Musica
   layers:
   - Default
   - TransparentFX

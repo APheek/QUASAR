@@ -12,12 +12,14 @@ public class SceneChange : MonoBehaviour
     public GameObject menuControles;
     public GameObject menuReiniciar;
 
+   
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -29,12 +31,14 @@ public class SceneChange : MonoBehaviour
 
     public void ChangeScene()
     {
+        
         SceneManager.LoadScene("Cinematica");
     }
 
 
     public void ChangeSceneInicio()
     {
+      
         SceneManager.LoadScene("MenuInicial");
     }
 
