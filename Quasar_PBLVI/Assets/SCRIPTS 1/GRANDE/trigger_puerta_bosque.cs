@@ -9,6 +9,7 @@ public class trigger_puerta_bosque : MonoBehaviour
     public AudioSource _abrirpuerta;
     private const string PUERTABOSQUE = "Puertabosque";
     public bool isPulsedispuertabosque = false;
+    public GameObject icono;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class trigger_puerta_bosque : MonoBehaviour
             if (_inputHandler._coger)
             {
                 _animator.SetBool("Puertabosque", true);
+                Destroy(icono);
 
                 if (_abrirpuerta.isPlaying == false)
                 {

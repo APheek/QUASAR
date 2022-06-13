@@ -286,7 +286,7 @@ public class SaltarParedes : MonoBehaviour
 
             if (controller.isGrounded && (controller.velocity.x != 0 || controller.velocity.z != 0))
             {
-
+                _inputHandler.puedechispa = false;
                 TRANSCORRCAM = true;
                 if (speed == 1)
                 {
@@ -321,6 +321,7 @@ public class SaltarParedes : MonoBehaviour
           
             else
             {
+                _inputHandler.puedechispa = true;
                 CAMINANDO = false;
                 CORRER = false;
 

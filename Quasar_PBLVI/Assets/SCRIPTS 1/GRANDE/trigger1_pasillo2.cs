@@ -29,7 +29,7 @@ public class trigger1_pasillo2 : MonoBehaviour
         
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
 
 

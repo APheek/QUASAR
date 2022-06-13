@@ -14,7 +14,7 @@ public class Bot_Ascensor : MonoBehaviour
     public GameObject jugador;
     public GameObject ascensor;
     public GameObject caja;
-
+    CAMBIARHIK cambiarhik;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,7 @@ public class Bot_Ascensor : MonoBehaviour
         _animator.SetBool(ASCENSOR, isPulsedisascensor);
         _roto = GameObject.FindGameObjectWithTag("Roto2").GetComponent<RotoHik2>();
         _inputHandler = GameObject.FindGameObjectWithTag("GameController").GetComponent<Controller>();
+        cambiarhik = GameObject.FindGameObjectWithTag("Player").GetComponent<CAMBIARHIK>();
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class Bot_Ascensor : MonoBehaviour
             Debug.Log("raito dentro");
             if (_inputHandler._chispa  && _roto._bandera)
             {
-
+                
                 Debug.Log("vamos alla");
                 _animator.SetBool("Ascensor", true);
                 _inputHandler._cambio = !_inputHandler._cambio;

@@ -22,6 +22,7 @@ public class Trigger_lav1 : MonoBehaviour
 
     private const string CANVA = "canva_a_negro";
     public bool isPulsediscanva = false;
+    public GameObject negro;
 
     CAMBIARHIK cambiarkik;
     SaltarParedes _saltarparedes;
@@ -54,7 +55,7 @@ public class Trigger_lav1 : MonoBehaviour
             _animator.SetBool("Puertabosque", false);
             _cerrarpuerta.Play();
             _ambientebosque.Stop();
-
+            _movementbosque.enabled = false;
             StartCoroutine(Waiting());
            
 
@@ -68,6 +69,7 @@ public class Trigger_lav1 : MonoBehaviour
     IEnumerator Waiting() //Como todos los codigos tendrian lo mismo, hacemos una funcion para todas. 
     {
         yield return new WaitForSeconds(0.5f);
+        negro.SetActive(true);
         _animator2.SetBool("canva_a_negro", true);
         yield return new WaitForSeconds(0.1f);
         _player.transform.position = _checkpoint.transform.position;

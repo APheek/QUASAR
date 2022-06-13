@@ -15,7 +15,7 @@ public class SceneChangeLab : MonoBehaviour
 
     public Transform checkpoint0;
     public Transform checkpoint1;
-    public Transform checkpoint2;
+    //public Transform checkpoint2;
     public Transform checkpoint3;
     public Transform checkpoint4;
     public Transform _player;
@@ -129,11 +129,11 @@ public class SceneChangeLab : MonoBehaviour
             _player.transform.position = checkpoint1.transform.position;
 
         }
-        else if (checkpoint.contador == 2)
-        {
-            _player.transform.position = checkpoint2.transform.position;
+        //else if (checkpoint.contador == 2)
+        //{
+        //    _player.transform.position = checkpoint2.transform.position;
 
-        }
+        //}
         else if (checkpoint.contador == 3)
         {
             _player.transform.position = checkpoint3.transform.position;
@@ -143,6 +143,7 @@ public class SceneChangeLab : MonoBehaviour
             _player.transform.position = checkpoint4.transform.position;
 
         }
+        
 
         menuPausa.SetActive(false);
         menuOpciones.SetActive(false);

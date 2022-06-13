@@ -47,8 +47,18 @@ public class CAMBIARHIK : MonoBehaviour
         if (_inputHandler._cambio){
             //  Debug.Log("he entradoen el cambio");
             // player_input.SwitchCurrentActionMap("Hikari");
+            if (!_inputHandler.movimientoascensor)
+            {
+                Debug.Log("estoy dentro de movimiento ascensor");
+                _volarhik.enabled = false;
+                _saltarparedes.enabled = false;
+                _volarbosque.enabled = false;
+                _scriptseguirhikari.enabled = true;
 
-            if (cambiarcaminar)
+                _inputHandler._cambio = !_inputHandler._cambio;
+
+            }
+            else if (cambiarcaminar)
             {
                 _volarbosque.enabled = false;
                 _volarhik.enabled = true;

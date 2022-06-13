@@ -56,7 +56,7 @@ public class Romper_cristal : MonoBehaviour
     {
 
        
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
         SceneManager.LoadScene("Cinematica2");
         Destroy(musica);
